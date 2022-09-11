@@ -24,3 +24,10 @@ app.include_router(vote.router)
 # больше не нужно, т.к. подключили alembic
 # это создавало таблицы на основе моделей
 # models.Base.metadata.create_all(bind=engine)
+
+
+@app.get("/")
+def root():
+    return {
+        "message": "API is ready",
+    }
